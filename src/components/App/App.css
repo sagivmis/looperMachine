@@ -1,0 +1,120 @@
+.App {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+
+    background-image: var(--gradient-sundae);
+}
+html {
+    height: 100vh;
+}
+body {
+    position: relative;
+    bottom: 80px;
+    font-family: "Roboto", sans-serif;
+
+    --shadow-liq-card: 0px 0px 20px rgba(49, 0, 255, 0.3);
+    --shadow-smooth: 0px 0px 6px rgba(255, 255, 255, 0.16);
+    --shadow-active-carousel: 0px 3px 50px rgba(0, 226, 255, 0.6);
+    --shadow-iso-voting-box: 0px 3px 30px rgb(255 255 255 / 8%);
+    --primary: #1f3c58;
+    --primary-light: #234664;
+    --primary-semilight: #4b505f;
+    --primary-dark: #234664;
+    --primary-alt: #95bcfa;
+    --secondary: #3b3d45;
+    --secondary-light: #222;
+    --secondary-dark: #4b505f;
+    --disabled: #606060;
+    --inactive: #606060;
+    --button-col-primary: #7eb3e0;
+    --button-col-primary-light: #f7f7f7;
+    --button-col-primary-dark: #fff;
+    --button-col-secondary: #a7d6ff;
+    --button-col-secondary-light: #fff;
+    --button-col-secondary-dark: #7e9ce0;
+    --button-col-disabled: #222;
+    --button-col-inactive: #effbfe;
+    --button-col-disconnect: #9e6aff;
+    --button-hover-primary: #7eb3e0;
+    --button-hover-primary-light: #afd7f5;
+    --button-hover-primary-semilight: #234664;
+    --button-hover-primary-dark: #1c3850;
+    --button-hover-secondary: #234664;
+    --button-hover-color-secondary: #fff;
+    --button-hover-secondary-light: #effbfe;
+    --button-hover-secondary-dark: #7e9ce0;
+    --button-hover-color-secondary-dark: #fff;
+    --button-hover-color-inactive: #fff;
+    --border-primary: #7eb3e0;
+    --border-primary-light: #234664;
+    --border-primary-dark: #234664;
+    --border-secondary: #3b3d45;
+    --white-bg: #fcf4f2;
+    --stats-bg: #eee;
+    --border-secondary-light: #fff;
+    --border-secondary-dark: #4b505f;
+    --border-alternative: #4a6da5;
+    --border-alternative-muted: #e3d5fa;
+    --border-muted: #fff;
+    --border-silent: #2c2e3c;
+    --border: #191b1f;
+    --border-provide-liquidity-container: #3b3d45;
+    --border-swap-routes: #a2a2a2;
+    --text: #fff;
+    --text-muted: #b1b1b1;
+    --text-silent: #676767;
+    --text-unobtrusive: #e8e8e8;
+    --text-primary: #8ac0f7;
+    --text-dark: #8ac0f7;
+    --text-secondary: #234664;
+    --text-no-pos: #fff;
+    --text-header-btn: #effbfe;
+    --danger: #ff5a5a;
+    --danger-transparent: rgba(255, 90, 90, 0.2);
+    --success: #5fff7d;
+    --warning: #ffd166;
+    --link: #7e9ce0;
+    --pageTab-active: #fff;
+    --pageTab-inactive: #222222;
+    --contrast: #fff;
+    --complementary: #000;
+    --header-icon: #effbfe;
+    --swapbox-separator: #fff;
+    --main-bg: #191b1f;
+    --swapbox-bg: #222429;
+    --select-bg: #101010;
+    --card-bottom-bg: #2c3548;
+    --header-button-bg: #2c2e3c;
+    --active-navigation: #234664;
+    --connected-wallet-bg: #6c5c79;
+    --confirm-summary: #202231;
+    --search-bg: #191b1f;
+    --transparent-scrollbar-thumb: rgba(149, 188, 250, 0.42);
+    --gradient-sundae: linear-gradient(
+        to right,
+        #e4a0f8 0%,
+        #cfa7f7 21.67%,
+        #c5a6f7 39.41%,
+        #abaef6 53.69%,
+        #afd7f5 100%
+    );
+    --gradient-silky: linear-gradient(
+        rgba(56, 53, 53, 0) 0%,
+        rgba(56, 53, 53, 0.26) 0%,
+        rgba(56, 53, 53, 0.45) 18.66%,
+        rgba(56, 53, 53, 0.58) 31.44%,
+        rgba(56, 53, 53, 0.64) 43.85%,
+        rgba(56, 53, 53, 0.79) 63.55%,
+        rgba(56, 53, 53, 0.84) 85.71%,
+        #383535 100%
+    );
+    --gradient-card-header: linear-gradient(to right, #d6a7f8 0%, #b1d5f4 100%);
+    --gradient-button: linear-gradient(to right, #d6a7f8 0%, #b1d5f4 100%);
+    --gradient-full: rgba(214, 167, 248, 0.25);
+    --chart-gradient-start: #cbacf0;
+    --chart-gradient-middle: #7e9ce0;
+    --chart-gradient-end: #95bcfa;
+    --chart-stroke: #9e6aff;
+    --line-primary: rgb(171, 168, 255);
+}

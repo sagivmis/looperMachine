@@ -1,0 +1,58 @@
+.control-panel-container {
+    position: relative;
+    left: 7.5%;
+    top: 10%;
+    padding: 2.75%;
+    /* margin-top: 100px; */
+
+    width: 80%;
+    height: 5%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--white-bg);
+}
+.relative {
+    position: relative;
+}
+.control-panel {
+    position: absolute;
+    left: -10%;
+    top: 12.5%;
+    margin-left: 10%;
+}
+
+.play {
+    position: relative;
+    display: inline-block;
+    /* margin-left: 30px; */
+}
+.pause {
+    position: relative;
+    display: inline-block;
+    /* margin-left: 30px; */
+}
+
+.loop {
+    position: relative;
+    display: inline-block;
+    /* margin-left: 30px; */
+}
+.mute {
+    position: relative;
+    display: inline-block;
+}
+.about {
+    /* width: 150%; */
+    padding: 2.35rem 10em;
+    border-radius: 5px;
+    font-size: 30px;
+    /* padding-: 150%; */
+}
+
+.about-c {
+    position: absolute;
+    left: 110%;
+    top: 3px;
+}
