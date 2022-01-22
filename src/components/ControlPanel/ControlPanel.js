@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ControlPanel.css";
 import Button from "../Button/Button";
 
-const ControlPanel = ({ strips }) => {
+const ControlPanel = ({ strips, checkIfCurrentCardIsActive }) => {
     const [playing, setPlaying] = useState(false);
     const [looping, setLooping] = useState(false);
     const [muted, setMuted] = useState(false);
@@ -92,6 +92,13 @@ const ControlPanel = ({ strips }) => {
                                 strip.current.deductFromEnd(5);
                             });
                         }}
+                    />
+                    <Button
+                        content={"checkActive"}
+                        onClick={() => {
+                            checkIfCurrentCardIsActive();
+                        }}
+                        size='big'
                     />
                 </div>
             </div>

@@ -1,18 +1,9 @@
-.playable-grid {
-    width: 64%;
-    position: relative;
-    bottom: 35%;
-    left: 35%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
-    grid-gap: 5px;
-}
-
 .card {
     position: relative;
     background-color: blanchedalmond;
     height: 50px;
     width: 95%;
+    cursor: pointer;
 }
 
 .active-card {

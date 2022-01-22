@@ -1,74 +1,86 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ControlPanel from "../ControlPanel/ControlPanel";
 import Panel from "../Panel/Panel";
 import Slider from "../Slider/Slider";
 import "./App.css";
+import GlobalContext from "../../context/globalContext";
+import Button from "../Button/Button";
 
 function App() {
-    const [strips, setStrips] = useState({});
-    const [cards, setCards] = useState([
-        {
-            id: 0,
-            active: false,
-        },
-        {
-            id: 1,
-            active: false,
-        },
-        {
-            id: 2,
-            active: false,
-        },
-        {
-            id: 3,
-            active: false,
-        },
-        {
-            id: 4,
-            active: false,
-        },
-        {
-            id: 5,
-            active: false,
-        },
-        {
-            id: 6,
-            active: false,
-        },
-        {
-            id: 7,
-            active: false,
-        },
-        {
-            id: 8,
-            active: false,
-        },
-        {
-            id: 9,
-            active: false,
-        },
-        {
-            id: 10,
-            active: false,
-        },
-        {
-            id: 11,
-            active: false,
-        },
+    const strips = useState({});
+    const cards = useState([]);
+    const songs = useState([
+        require("../../loopers/ALLTRACK.mp3"),
+        require("../../loopers/B.mp3"),
+        require("../../loopers/DRUMS.mp3"),
+        require("../../loopers/HEHE.mp3"),
+        require("../../loopers/HIGH.mp3"),
+        require("../../loopers/JIBRISH.mp3"),
+        require("../../loopers/LEAD.mp3"),
+        require("../../loopers/tambourine.mp3"),
+        require("../../loopers/UUHO.mp3"),
     ]);
-    // const [cards, setCards] = useState({});
-    // console.log(strips);
+    const [generated, setGenerated] = useState(false);
+    const [currentCard, setCurrentCard] = useState(0);
+
+    const generateCards = () => {
+        if (!generated) {
+            let container = [];
+            let temp = [];
+            for (let i = 0; i < songs[0].length; i++) {
+                temp = [];
+                for (let j = 0; j < 12; j++) {
+                    temp.push({
+                        id: i * 12 + j,
+                        songName: songs[0][i],
+                        ref: null,
+                        content: i * 12 + j,
+                        active: false,
+                    });
+                }
+                container[songs[0][i]] = temp;
+                // container.push(temp);
+            }
+            cards[1](container);
+        }
+        setGenerated(true);
+    };
+    const checkIfCurrentCardIsActive = () => {
+        let activeCards = Object.values(cards[0]).map((strip, stripIndex) => {
+            return strip[currentCard].active;
+        });
+        Object.values(strips[0]).forEach((songRef, index) => {
+            if (activeCards[index]) songRef.current.play();
+        });
+    };
+
+    useEffect(() => {
+        generateCards();
+    }, [songs]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log(`Current card: ${currentCard}`);
+            setCurrentCard((prev) => {
+                if (prev < 11) return prev + 1;
+                else return 0;
+            });
+            checkIfCurrentCardIsActive();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [cards]);
+
     return (
-        <div className='App'>
-            <Slider />
-            <Panel
-                setStrips={setStrips}
-                strips={strips}
-                cards={cards}
-                setCards={setCards}
-            />
-            <ControlPanel strips={strips} />
-        </div>
+        <GlobalContext.Provider value={{ cards, strips, songs, currentCard }}>
+            <div className='App'>
+                <Slider />
+                <Panel currentCard={currentCard} />
+                <ControlPanel
+                    strips={strips[0]}
+                    checkIfCurrentCardIsActive={checkIfCurrentCardIsActive}
+                />
+            </div>
+        </GlobalContext.Provider>
     );
 }
 

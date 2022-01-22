@@ -1,0 +1,10 @@
+.cursor {
+    position: absolute;
+    z-index: 4;
+    background-color: #eee;
+    height: 600px;
+    width: 10px;
+    left: 40%;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
