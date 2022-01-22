@@ -39,7 +39,6 @@ function App() {
                     });
                 }
                 container[songs[0][i]] = temp;
-                // container.push(temp);
             }
             cards[1](container);
         }
@@ -73,7 +72,6 @@ function App() {
     return (
         <GlobalContext.Provider value={{ cards, strips, songs, currentCard }}>
             <div className='App'>
-                <Slider />
                 <Panel currentCard={currentCard} />
                 <ControlPanel
                     strips={strips[0]}

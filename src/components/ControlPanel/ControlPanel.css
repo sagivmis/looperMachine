@@ -1,7 +1,8 @@
 .control-panel-container {
     position: relative;
-    left: 7.5%;
-    top: 10%;
+    display: inline-block;
+    left: 0.5%;
+    top: 15%;
     padding: 2.75%;
     /* margin-top: 100px; */
 
@@ -18,9 +19,32 @@
 }
 .control-panel {
     position: absolute;
-    left: -10%;
     top: 12.5%;
-    margin-left: 10%;
+}
+@media only screen and (max-width: 1700px) {
+    .control-panel {
+        top: 7%;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .control-panel {
+        top: 7%;
+    }
+    .control-panel-container {
+        padding: 3.55%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .control-panel-container {
+        padding: 4.55%;
+        /* padding-bottom: 20%; */
+    }
+}
+@media only screen and (max-width: 900px) {
+    .control-panel-container {
+        padding: 4.55%;
+        padding-bottom: 50%;
+    }
 }
 
 .play {

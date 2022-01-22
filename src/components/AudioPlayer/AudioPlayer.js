@@ -27,19 +27,19 @@ const AudioPlayer = React.forwardRef(
             },
             loop() {
                 setLoop(true);
-                setLoopClass("forwardBackward active");
+                setLoopClass("control-btn active");
             },
             unloop() {
                 setLoop(false);
-                setLoopClass("forwardBackward");
+                setLoopClass("control-btn");
             },
             mute() {
                 audioPlayer.current.muted = true;
-                setMuteClass("forwardBackward active");
+                setMuteClass("control-btn active");
             },
             unmute() {
                 audioPlayer.current.muted = false;
-                setMuteClass("forwardBackward");
+                setMuteClass("control-btn");
             },
             deductFromEnd(number) {
                 setSlideEndValue((slideEndValue) => slideEndValue - number);
@@ -64,8 +64,8 @@ const AudioPlayer = React.forwardRef(
         const [loop, setLoop] = useState(false);
         const [mute, setMute] = useState(false);
 
-        const [loopClass, setLoopClass] = useState("forwardBackward");
-        const [muteClass, setMuteClass] = useState("forwardBackward");
+        const [loopClass, setLoopClass] = useState("control-btn");
+        const [muteClass, setMuteClass] = useState("control-btn");
 
         // references
         const audioPlayer = useRef(); // reference our audio component
@@ -175,20 +175,20 @@ const AudioPlayer = React.forwardRef(
             }
 
             let displayElement =
-                parent.getElementsByClassName("rangeValues")[0];
+                parent.getElementsByClassName("range-values")[0];
             displayElement.innerHTML = slide1 + " - " + slide2;
         };
 
         const toggleLoop = () => {
             let prev = loop;
             setLoop(!prev);
-            setLoopClass(prev ? "forwardBackward" : "forwardBackward active");
+            setLoopClass(prev ? "control-btn" : "control-btn active");
         };
         const toggleMute = () => {
             let prev = mute;
             audioPlayer.current.muted = !audioPlayer.current.muted;
             setMute(!prev);
-            setMuteClass(prev ? "forwardBackward" : "forwardBackward active");
+            setMuteClass(prev ? "control-btn" : "control-btn active");
         };
         useEffect(() => {
             const seconds = Math.floor(audioPlayer.current.duration);
@@ -211,29 +211,30 @@ const AudioPlayer = React.forwardRef(
         }, []);
 
         return (
-            <div className={"audioPlayer"} ref={audioContainer}>
+            <div className={"audio-player"} ref={audioContainer}>
                 <audio ref={audioPlayer} src={song} preload='metadata'></audio>
-                <button onClick={togglePlayPause} className={"playPause"}>
+                <button onClick={togglePlayPause} className={"play-pause"}>
                     {isPlaying ? <FaPause /> : <FaPlay className={"play"} />}
                 </button>
-                <button className={muteClass} onClick={toggleMute}>
-                    MUTE
-                </button>
-                <button className={loopClass} onClick={toggleLoop}>
-                    LOOP
-                </button>
-
+                <div className='control-btns-container'>
+                    <button className={muteClass} onClick={toggleMute}>
+                        MUTE
+                    </button>
+                    <button className={loopClass} onClick={toggleLoop}>
+                        LOOP
+                    </button>
+                </div>
                 {/* current time */}
-                <div className={"currentTime"}>
+                <div className={"current-time"}>
                     {calculateTime(currentTime)}
                 </div>
 
                 {/* progress bar */}
                 <section className='range-slider'>
-                    <span className='rangeValues'></span>
+                    <span className='range-values'></span>
                     <input
                         ref={startProgressBarThumb}
-                        className='progressBar start'
+                        className='progress-bar start'
                         value={slideStartValue}
                         min='0'
                         max='17'
@@ -247,7 +248,7 @@ const AudioPlayer = React.forwardRef(
                     />
                     <input
                         ref={currentProgressBarThumb}
-                        className='progressBar current'
+                        className='progress-bar current'
                         value={slideCurrentValue}
                         min={"0"}
                         max={"17"}
@@ -263,7 +264,7 @@ const AudioPlayer = React.forwardRef(
                     />
                     <input
                         ref={endProgressBarThumb}
-                        className='progressBar end'
+                        className='progress-bar end'
                         value={slideEndValue}
                         min='0'
                         max='17'
@@ -276,13 +277,6 @@ const AudioPlayer = React.forwardRef(
                         }}
                     />
                 </section>
-
-                {/* duration */}
-                {/* <div className={"duration"}>
-                {duration && !isNaN(duration) && calculateTime(duration)}
-            </div> */}
-
-                {/* ------------------------ */}
             </div>
         );
     }

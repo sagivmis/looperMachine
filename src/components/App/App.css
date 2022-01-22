@@ -4,10 +4,11 @@
     height: 100vh;
 
     background-image: var(--gradient-sundae);
+    /* overflow: hidden; */
 }
 
 html {
-    height: 100vh;
+    /* height: 100vh; */
 }
 body {
     position: relative;

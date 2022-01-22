@@ -1,10 +1,29 @@
 .cursor {
+    --start-from: 40%;
     position: absolute;
     z-index: 4;
     background-color: #eee;
-    height: 600px;
+    /* height: 1900px; */
+    height: 1800px;
     width: 10px;
-    left: 40%;
+    left: var(--start-from);
     border: 1px solid black;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* =============================== */
+
+@media only screen and (max-width: 1300px) {
+    .cursor {
+        --start-from: 47%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .cursor {
+        --start-from: 44%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .cursor {
+        --start-from: 5%;
+    }
 }

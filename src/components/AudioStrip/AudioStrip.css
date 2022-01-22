@@ -1,7 +1,8 @@
 .audio-strip {
     position: relative;
     width: 99.5%;
-    height: 80px;
+    --audio-height: 80px;
+    height: var(--audio-height);
 
     background-color: #eee;
     margin: 0 10px 10px 0;
@@ -33,3 +34,30 @@
 }
 
 /* =============================== */
+@media only screen and (max-width: 1300px) {
+    .playable-grid {
+        width: 52%;
+        --start-from: 47%;
+        left: 47%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .playable-grid {
+        width: 55%;
+        --start-from: 44%;
+        left: 44%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .audio-strip {
+        --audio-height: 180px;
+        height: var(--audio-height);
+    }
+    .playable-grid {
+        width: 90%;
+        --start-from: 5%;
+        left: 5%;
+        bottom: 5%;
+    }
+}

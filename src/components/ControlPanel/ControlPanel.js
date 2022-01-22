@@ -93,13 +93,6 @@ const ControlPanel = ({ strips, checkIfCurrentCardIsActive }) => {
                             });
                         }}
                     />
-                    <Button
-                        content={"checkActive"}
-                        onClick={() => {
-                            checkIfCurrentCardIsActive();
-                        }}
-                        size='big'
-                    />
                 </div>
             </div>
         </div>
