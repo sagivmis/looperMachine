@@ -1,6 +1,6 @@
 .audio-player {
-    --primary: #f40082;
-    --secondary: #ffd200;
+    --primary: #effbfe;
+    --secondary: #234664;
 
     position: relative;
     top: 25%;
@@ -8,6 +8,7 @@
     align-items: center;
     display: flex;
     width: 90%;
+    /* margin-right: 5px/; */
 }
 
 .control-btn {
@@ -20,6 +21,7 @@
     color: #eee;
     cursor: pointer;
     position: relative;
+    margin-left: 5px;
 }
 
 .control-btn:hover {
