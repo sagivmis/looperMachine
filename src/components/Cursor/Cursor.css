@@ -3,7 +3,6 @@
     position: absolute;
     z-index: 4;
     background-color: #eee;
-    /* height: 1900px; */
     height: 1800px;
     width: 10px;
     left: var(--start-from);

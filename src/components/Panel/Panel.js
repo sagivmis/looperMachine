@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import AudioStrip from "../AudioStrip/AudioStrip";
-import Button from "../../components/Button/Button";
 import "./Panel.css";
 import globalContext from "../../context/globalContext";
 import Cursor from "../Cursor/Cursor";

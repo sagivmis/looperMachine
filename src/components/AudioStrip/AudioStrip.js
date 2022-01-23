@@ -1,15 +1,10 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import "./AudioStrip.css";
-import { PlayIcon, PauseIcon, VolumeIcon, MuteIcon } from "../../icons/icons";
 
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import Card from "../Card/Card";
 import globalContext from "../../context/globalContext";
 
-// strips,
-// setStrips,
-// cards,
-// setCards,
 const AudioStrip = ({ song, players, setPlayers }) => {
     const {
         strips: [strips, setStrips],
@@ -25,10 +20,7 @@ const AudioStrip = ({ song, players, setPlayers }) => {
 
     const songName = song.substring(14).split(".")[0];
     const playerRef = useRef();
-    // console.log(strips);
     useEffect(() => {
-        // console.log(Math.floor(60 / playerRef.current.getTotalSongTime()));
-        // console.log(cards);
         setStrips((prev) => {
             return { ...prev, [songName]: playerRef };
         });
@@ -39,7 +31,6 @@ const AudioStrip = ({ song, players, setPlayers }) => {
         });
     }, []);
 
-    // console.log(cards);
     const cardRef = useRef();
 
     const getSongIdByName = () => {};

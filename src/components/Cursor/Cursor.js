@@ -5,7 +5,6 @@ const Cursor = ({ currentCard }) => {
     const [currentSecond, setCurrentSecond] = useState(0);
     const [startPercent, setStartPercent] = useState(40);
     const cursorRef = useRef();
-    // const [audioStrips, setAudioStrips] = useState();
 
     const handleResize = () => {
         var width =
@@ -34,7 +33,6 @@ const Cursor = ({ currentCard }) => {
             interval = setInterval(() => {
                 setCurrentSecond((prev) => {
                     if (prev < 57) return prev + 1;
-                    // if (prev < 60) return 57;
                     else return 0;
                 });
             }, 1000);
@@ -57,7 +55,6 @@ const Cursor = ({ currentCard }) => {
         "left",
         `${startPercent + currentSecond}%`
     );
-    // console.log(currentCard, currentSecond);
     return <div className='cursor' ref={cursorRef}></div>;
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ControlPanel.css";
 import Button from "../Button/Button";
 
-const ControlPanel = ({ strips, checkIfCurrentCardIsActive }) => {
+const ControlPanel = ({ strips }) => {
     const [playing, setPlaying] = useState(false);
     const [looping, setLooping] = useState(false);
     const [muted, setMuted] = useState(false);

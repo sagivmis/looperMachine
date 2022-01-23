@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import ControlPanel from "../ControlPanel/ControlPanel";
 import Panel from "../Panel/Panel";
-import Slider from "../Slider/Slider";
 import "./App.css";
 import GlobalContext from "../../context/globalContext";
-import Button from "../Button/Button";
 
 function App() {
     const strips = useState({});
@@ -73,10 +71,7 @@ function App() {
         <GlobalContext.Provider value={{ cards, strips, songs, currentCard }}>
             <div className='App'>
                 <Panel currentCard={currentCard} />
-                <ControlPanel
-                    strips={strips[0]}
-                    checkIfCurrentCardIsActive={checkIfCurrentCardIsActive}
-                />
+                <ControlPanel strips={strips[0]} />
             </div>
         </GlobalContext.Provider>
     );

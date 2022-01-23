@@ -20,15 +20,8 @@ const Card = ({ card, songName }) => {
         )[0];
     };
     const handleCardClick = (id) => {
-        // console.log(getAudioStrip());
-        // console.log(cards);
-        // setCards(
         getAudioStrip().forEach((card) => {
-            // console.log(getSongFullName());
-            // console.log(card);
-            // console.log(id);
             if (card.id === id) {
-                // console.log("in");
                 card.active = !card.active;
                 console.log(
                     `#${id} and the card: #${card.id}:${
@@ -42,7 +35,6 @@ const Card = ({ card, songName }) => {
         });
     };
 
-    // console.log(cards);
     return (
         <div>
             <div

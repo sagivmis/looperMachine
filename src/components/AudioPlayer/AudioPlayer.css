@@ -8,7 +8,6 @@
     align-items: center;
     display: flex;
     width: 90%;
-    /* margin-right: 5px/; */
 }
 
 .control-btn {
@@ -83,7 +82,6 @@
     outline: none;
 }
 
-/* progress bar - chrome and safari */
 .progress-bar::before {
     content: "";
     height: 20px;
@@ -104,7 +102,6 @@
     height: 20px;
     width: var(--seek-after-width);
     background-color: var(--seek-before-color);
-    /* background-color: black; */
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     position: absolute;
@@ -113,7 +110,7 @@
     z-index: 1;
     cursor: pointer;
 }
-/* knobby - chrome and safari */
+
 .progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 40px;
@@ -128,7 +125,6 @@
     box-sizing: border-box;
 }
 
-/* knobby while dragging - chrome and safari */
 .progress-bar:active::-webkit-slider-thumb {
     transform: scale(1.2);
     background: var(--selectedKnobby);
@@ -169,15 +165,10 @@ section.range-slider input {
     section.range-slider {
         margin-left: 10px;
         width: 240px;
-        /* right: 150px; */
     }
     .control-btns-container {
         position: absolute;
         top: -40px;
-        /* display: inline; */
-
-        /* position: relative; */
-        /* bottom: 50; */
     }
     .currentTime,
     .duration {

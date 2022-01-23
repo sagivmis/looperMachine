@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect, useImperativeHandle } from "react";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { BsArrowRightShort } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
-import Button from "../Button/Button";
 import "./AudioPlayer.css";
 
 const AudioPlayer = React.forwardRef(
@@ -68,13 +65,13 @@ const AudioPlayer = React.forwardRef(
         const [muteClass, setMuteClass] = useState("control-btn");
 
         // references
-        const audioPlayer = useRef(); // reference our audio component
-        const startProgressBarThumb = useRef(); // reference our progress bar
-        const currentProgressBarThumb = useRef(); // reference our progress bar
-        const endProgressBarThumb = useRef(); // reference our progress bar
-        const animationRef = useRef(); // reference the animation
+        const audioPlayer = useRef(); 
+        const startProgressBarThumb = useRef();
+        const currentProgressBarThumb = useRef();
+        const endProgressBarThumb = useRef(); 
+        const animationRef = useRef(); 
 
-        const audioContainer = useRef(); // reference the animation
+        const audioContainer = useRef(); 
 
         const calculateTime = (secs) => {
             const minutes = Math.floor(secs / 60);
@@ -162,12 +159,10 @@ const AudioPlayer = React.forwardRef(
         };
 
         const getVals = () => {
-            // Get slider values
             let parent = audioContainer.current.parentNode;
             let slides = parent.getElementsByTagName("input");
             let slide1 = parseFloat(slides[0].value);
             let slide2 = parseFloat(slides[2].value);
-            // Neither slider will clip the other, so make sure we determine which is larger
             if (slide1 > slide2) {
                 let tmp = slide2;
                 slide2 = slide1;
