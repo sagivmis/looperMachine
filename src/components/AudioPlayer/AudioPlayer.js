@@ -65,13 +65,13 @@ const AudioPlayer = React.forwardRef(
         const [muteClass, setMuteClass] = useState("control-btn");
 
         // references
-        const audioPlayer = useRef(); 
+        const audioPlayer = useRef();
         const startProgressBarThumb = useRef();
         const currentProgressBarThumb = useRef();
-        const endProgressBarThumb = useRef(); 
-        const animationRef = useRef(); 
+        const endProgressBarThumb = useRef();
+        const animationRef = useRef();
 
-        const audioContainer = useRef(); 
+        const audioContainer = useRef();
 
         const calculateTime = (secs) => {
             const minutes = Math.floor(secs / 60);
@@ -93,10 +93,8 @@ const AudioPlayer = React.forwardRef(
 
         const stopSound = () => {
             setIsPlaying(false);
-
             setSlideCurrentValue(slideStartValue);
             audioPlayer.current.currentTime = slideStartValue;
-
             audioPlayer.current.pause();
             cancelAnimationFrame(animationRef.current);
         };
@@ -104,7 +102,6 @@ const AudioPlayer = React.forwardRef(
         const togglePlayPause = () => {
             const prevValue = isPlaying;
             setIsPlaying(!prevValue);
-
             setSlideCurrentValue(slideStartValue);
             audioPlayer.current.currentTime = slideStartValue;
 
@@ -122,7 +119,6 @@ const AudioPlayer = React.forwardRef(
             currentProgressBarThumb.current.value =
                 audioPlayer.current.currentTime;
             changePlayerCurrentTime();
-
             animationRef.current = requestAnimationFrame(whilePlaying);
 
             if (audioPlayer.current.currentTime >= slideEndValue) {

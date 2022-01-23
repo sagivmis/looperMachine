@@ -24,13 +24,13 @@
 }
 
 .control-btn:hover {
-    color: var(--primary);
+    color: #e4a0f8;
     transition: all ease-in 0.5s;
 }
 
 .active {
     transition: all ease-in 0.2s;
-    color: var(--primary);
+    color: #e4a0f8;
 }
 
 .play-pause {
