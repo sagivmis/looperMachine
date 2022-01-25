@@ -14,7 +14,7 @@ const Card = ({ card, songName }) => {
         return songNames.filter((name) => name.includes(songName))[0];
     };
 
-    const getAudioStrip = (name) => {
+    const getAudioStrip = () => {
         return Object.values(cards).filter(
             (card) => card[0].songName === getSongFullName()
         )[0];

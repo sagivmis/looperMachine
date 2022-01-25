@@ -9,7 +9,6 @@ const AudioStrip = ({ song, players, setPlayers }) => {
     const {
         strips: [strips, setStrips],
         cards: [cards, setCards],
-        songs: [songNames, setSongNames],
     } = useContext(globalContext);
     const handleMove = (e) => {
         const x = e.pageX - e.target.offsetLeft;
@@ -33,7 +32,6 @@ const AudioStrip = ({ song, players, setPlayers }) => {
 
     const cardRef = useRef();
 
-    const getSongIdByName = () => {};
     return (
         <div className='audio-strip shiny' onMouseMove={handleMove}>
             <AudioPlayer
@@ -46,7 +44,6 @@ const AudioStrip = ({ song, players, setPlayers }) => {
             <div className='playable-grid'>
                 {cards[song]?.map((card) => (
                     <Card
-                        // ref={cardRef}
                         strips={strips}
                         songName={songName}
                         card={card}
