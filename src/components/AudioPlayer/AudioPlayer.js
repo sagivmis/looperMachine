@@ -156,9 +156,8 @@ const AudioPlayer = React.forwardRef(
 
         const getVals = () => {
             let parent = audioContainer.current.parentNode;
-            let slides = parent.getElementsByTagName("input");
-            let slide1 = parseFloat(slides[0].value);
-            let slide2 = parseFloat(slides[2].value);
+            let slide1 = parseFloat(startProgressBarThumb.current.value);
+            let slide2 = parseFloat(endProgressBarThumb.current.value);
             if (slide1 > slide2) {
                 let tmp = slide2;
                 slide2 = slide1;
